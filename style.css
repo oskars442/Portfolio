@@ -1,0 +1,181 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+
+.navbar-default {
+    background: transparent;
+    color: #ffffff;
+}
+
+.navbar-default a {
+    color: wheat;
+}
+
+.navbar-default a:hover {
+    color: white;
+}
+
+
+.scrolled {
+    background-color: rgba(255, 0, 0, 0.75);
+    background: transparent;
+}
+
+
+.title {
+    margin-top: 4rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: 'Comic Neue',
+        cursive;
+}
+
+#header {
+    width: 100%;
+    height: 100vh;
+    background-color: gray;
+    background-image: url(images//bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+}
+
+.logo {
+    width: 25vh;
+    height: 25vh;
+    border-radius: 50%;
+    border: solid #333333 5px;
+
+}
+
+.name {
+    color: #800000;
+    font-size: 2.5rem;
+    font-style: "Comic Sans MS",
+        cursive,
+        sans-serif;
+    font-weight: bold;
+}
+
+.text {
+    font-size: 1rem;
+    line-break: 10px;
+}
+
+header span {
+    color: lime;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+/* /// Header */
+
+#main {
+    width: 100%;
+    height: 100vh;
+    background-color: #e6e6fa;
+}
+
+.about {
+    max-width: 100%;
+    height: 100vh;
+}
+
+/* /// Main */
+
+.hobbies {
+    width: 100%;
+    height: 100vh;
+}
+
+.hobbies p {
+    margin-top: 3rem;
+}
+
+.hobbies tr,
+.hobbies td {
+    color: black;
+    background-color: thistle;
+    font-size: 1.5rem;
+}
+
+.hobbies table {
+    margin: 0 auto;
+    margin-top: 3rem;
+    max-width: 90%;
+    border-collapse: separate;
+    border-spacing: 1em;
+    cursor: default;
+}
+
+.hobbies th,
+.hobbies td:hover {
+    background-color: chartreuse;
+}
+
+
+/* /// Hobbies */
+
+.level {
+    max-width: 100%;
+    height: 100vh;
+    background-color: #dcedc1;
+}
+
+.progress {
+    max-width: 90%;
+}
+
+#levelimg {
+    max-width: 100%;
+    height: 100vh;
+}
+
+/* progress bar colors for thirdBar*/
+.a {
+    background-color: teal;
+}
+
+.b {
+    background-color: rgb(128, 0, 89);
+}
+
+.c {
+    background-color: orange;
+}
+
+.d {
+    background-color: rgb(0, 42, 104);
+}
+
+.e {
+    background-color: lime;
+}
+
+/* /// progres bar  */
+
+#myWork {
+    max-width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6em;
+}
+
+.cardimg {
+    max-width: 18rem;
+    height: 8rem;
+}
