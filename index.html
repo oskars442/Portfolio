@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional Web Developer specializing in modern, responsive web solutions and smart IT integrations.">
+    <meta name="keywords" content="web developer, web design, API integrations, responsive design, JavaScript, PHP">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Oskars Developer - Professional Web Developer">
+    <meta property="og:description" content="Creating modern, responsive web solutions with clean UX and smart integrations.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./assets/og-image.jpg">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Oskars Developer",
+        "jobTitle": "Web Developer",
+        "description": "Professional web developer specializing in modern web solutions"
+    }
+    </script>
+    
+    <title>Oskars Developer - Professional Web Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+     <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar__container">
+            <div class="navbar__brand">
+                <a href="#hero" class="navbar__logo">
+                    <span class="navbar__logo-bracket">&lt;</span>
+                    <span class="navbar__logo-text">OskarsDev</span>
+                    <span class="navbar__logo-bracket">/&gt;</span>
+                </a>
+            </div>
+            
+            <ul class="navbar__menu" id="navbarMenu">
+                <li class="navbar__item">
+                    <a href="#hero" class="navbar__link" data-section="hero">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#services" class="navbar__link" data-section="services">Services</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#about" class="navbar__link" data-section="about">About</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#skills" class="navbar__link" data-section="skills">Skills</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#projects" class="navbar__link" data-section="projects">Projects</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#contact" class="navbar__link" data-section="contact">Contact</a>
+                </li>
+            </ul>
+            
+            <div class="navbar__toggle" id="navbarToggle">
+                <span class="navbar__toggle-bar"></span>
+                <span class="navbar__toggle-bar"></span>
+                <span class="navbar__toggle-bar"></span>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero__background"></div>
+        <div class="hero__particles"></div>
+        <div class="container hero__container">
+            <div class="hero__content">
+                <h1 class="hero__title">
+                    <span class="hero__title-main">Building Digital</span>
+                    <span class="hero__title-accent">Experiences</span>
+                </h1>
+                <p class="hero__subtitle">Full-stack web developer crafting modern, responsive solutions with clean code and exceptional user experiences.</p>
+                <div class="hero__buttons">
+                    <button class="btn btn--primary" onclick="scrollToSection('projects')">
+                        <span>View Projects</span>
+                    </button>
+                    <button class="btn btn--secondary" onclick="scrollToSection('contact')">
+                        <span>Get In Touch</span>
+                    </button>
+                </div>
+            </div>
+            <div class="hero__image">
+                <div class="hero__photo">
+                    <img src="./images/i2.jpg" alt="Oskars Developer - Web Developer" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section__title">
+                <span class="section__title-text">Services</span>
+                <span class="section__title-underline"></span>
+            </h2>
+            <div class="services__grid">
+                <div class="service-card">
+                    <div class="service-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-card__title">Web Design</h3>
+                    <p class="service-card__description">Creating beautiful, user-centered designs that convert visitors into customers.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-card__title">Smart IT Solutions</h3>
+                    <p class="service-card__description">Intelligent automation and system integrations that streamline your workflow.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-card__title">Email Setup & Config</h3>
+                    <p class="service-card__description">Professional email systems setup with security and deliverability optimization.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16,18 22,12 16,6"/>
+                            <polyline points="8,6 2,12 8,18"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-card__title">API Integrations</h3>
+                    <p class="service-card__description">Seamless third-party service connections and custom API development.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-card__title">Responsive Design</h3>
+                    <p class="service-card__description">Mobile-first development ensuring perfect experiences across all devices.</p>
+                </div>
+
+                <div class="service-card">
+  <div class="service-card__icon" aria-hidden="true">
+    <!-- credit-card / checkout icon -->
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="2" y="5" width="20" height="14" rx="2" />
+      <line x1="2" y1="9" x2="22" y2="9" />
+      <rect x="6" y="13" width="6" height="3" rx="1" />
+    </svg>
+  </div>
+  <h3 class="service-card__title">Payment System Integration</h3>
+  <p class="service-card__description">
+    Secure, seamless checkout with Stripe, PayPal and bank cards — webhooks, subscriptions,
+    invoices, refunds, SCA/3-D Secure, and test/sandbox setup.
+  </p>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section__title">
+                <span class="section__title-text">About Me</span>
+                <span class="section__title-underline"></span>
+            </h2>
+            <div class="about__content">
+                <div class="about__text">
+                    <p>I'm a passionate web developer with over 5 years of experience creating digital solutions that make a difference. My journey began with a curiosity about how websites work, and it has evolved into a deep expertise in modern web technologies and user experience design.</p>
+                    
+                    <p>I specialize in building fast, accessible, and beautiful web applications using cutting-edge technologies. Whether it's a simple landing page or a complex web application, I focus on clean code, performance optimization, and exceptional user experiences.</p>
+                    
+                    <p>When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community.</p>
+                </div>
+                <div class="about__image">
+                    <img src="./images/workspace.png" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section__title">
+                <span class="section__title-text">Skills & Technologies</span>
+                <span class="section__title-underline"></span>
+            </h2>
+            <div class="skills__content">
+                <div class="skills__category">
+                    <h3 class="skills__category-title">Frontend</h3>
+                    <div class="skills__badges">
+                        <span class="skill-badge">HTML5</span>
+                        <span class="skill-badge">CSS3</span>
+                        <span class="skill-badge">JavaScript</span>
+                        <span class="skill-badge">React</span>
+                        <span class="skill-badge">Responsive Design</span>
+                        <span class="skill-badge">Bootsrap</span>
+                        <span class="skill-badge">Tailwind CSS</span>
+                    </div>
+                </div>
+                
+                <div class="skills__category">
+                    <h3 class="skills__category-title">Backend & Database</h3>
+                    <div class="skills__badges">
+                        <span class="skill-badge">PHP</span>
+                        <span class="skill-badge">Python</span>
+                        <span class="skill-badge">MySQL</span>
+                        <span class="skill-badge">API Integrations</span>
+                        <span class="skill-badge">GraphQL</span>
+                        <span class="skill-badge">Node.js</span>
+                    </div>
+                </div>
+                
+                <div class="skills__category">
+                    <h3 class="skills__category-title">Tools & Platforms</h3>
+                    <div class="skills__badges">
+                        <span class="skill-badge">Git & GitHub</span>
+                        <span class="skill-badge">Wix</span>
+                        <span class="skill-badge">Wordpress</span>
+                        <span class="skill-badge">Shopify</span>
+                        <span class="skill-badge">Figma</span>
+                        <span class="skill-badge">Email Configuration</span>
+                        <span class="skill-badge">Smart IT Solutions</span>
+                        <span class="skill-badge">Accounting Logic</span>
+                        <span class="skill-badge">SEO Optimization Tools</span>
+                        <span class="skill-badge">cPanel / Hosting managment</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section__title">
+                <span class="section__title-text">Featured Projects</span>
+                <span class="section__title-underline"></span>
+            </h2>
+            <div class="projects__grid">
+                <div class="project-card">
+                    <div class="project-card__image">
+                        <img src="./images/project1.png" alt="E-commerce Platform Project" loading="lazy">
+                        <div class="project-card__overlay">
+                            <button class="btn btn--project">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Time tracikg platform Calendarit</h3>
+                        <p class="project-card__description">Full stack time tracking solutions with account dashboard</p>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-card__image">
+                        <img src="./images/project2.png" alt="Corporate Website Project" loading="lazy">
+                        <div class="project-card__overlay">
+                            <button class="btn btn--project">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Tour-Agency web page</h3>
+                        <p class="project-card__description">Modern tour-agency website with API integration and performance optimization.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-card__image">
+                        <img src="./images/project3.png" alt="Web Application Project" loading="lazy">
+                        <div class="project-card__overlay">
+                            <button class="btn btn--project">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Task Management App</h3>
+                        <p class="project-card__description">Collaborative task management application with real-time updates and team features.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section__title">
+                <span class="section__title-text">Get In Touch</span>
+                <span class="section__title-underline"></span>
+            </h2>
+            <div class="contact__content">
+                <form class="contact__form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                        <span class="form-error" id="nameError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                        <span class="form-error" id="emailError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" name="message" class="form-input form-textarea" rows="5" required></textarea>
+                        <span class="form-error" id="messageError"></span>
+                    </div>
+                    
+                    <button type="submit" class="btn btn--primary btn--full">
+                        <span>Send Message</span>
+                    </button>
+                    
+                    <div class="form-status" id="formStatus"></div>
+                </form>
+                
+                <div class="contact__social">
+                    <a href="https://github.com/oskars442" class="social-link" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/oskars.seklitis" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                 <path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.326 24H12.82v-9.294H9.692V11.06h3.128V8.413c0-3.1 1.894-4.788 4.66-4.788 1.325 0 2.463.099 2.795.143v3.24h-1.918c-1.504 0-1.796.715-1.796 1.764v2.31h3.59l-.468 3.646h-3.122V24h6.116C23.407 24 24 23.408 24 22.674V1.326C24 .592 23.407 0 22.675 0z"/>
+                     </svg>
+                    </a>
+                    
+                <a href="https://x.com/oskars442" class="social-link" aria-label="X (formerly Twitter)" target="_blank" rel="noopener noreferrer">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M18.244 2H21.67l-7.43 8.492L23.5 22h-6.49l-5.09-6.447L6.2 22H2.77l7.93-9.07L.5 2h6.64l4.62 5.963L18.244 2zm-1.14 17.67h1.44L7.06 4.17H5.51l11.594 15.5z"/>
+  </svg>
+</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
