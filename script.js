@@ -1,23 +1,31 @@
 // Navigation functionality
 document.addEventListener('DOMContentLoaded', () => {
-    const navbar = document.getElementById('navbar');
-    const navbarToggle = document.getElementById('navbarToggle');
-    const navbarMenu = document.getElementById('navbarMenu');
-    const navbarLinks = document.querySelectorAll('.navbar__link');
-    
-    // Mobile menu toggle
-    navbarToggle.addEventListener('click', () => {
-        navbarToggle.classList.toggle('active');
-        navbarMenu.classList.toggle('active');
-    });
-    
-    // Close mobile menu when clicking on a link
-    navbarLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navbarToggle.classList.remove('active');
-            navbarMenu.classList.remove('active');
-        });
-    });
+   // --- Mobile menu (tablet & down) ---
+const nav = document.getElementById('navbar');
+const toggle = document.getElementById('navbarToggle');
+const menu  = document.getElementById('navbarMenu');
+const links = document.querySelectorAll('.navbar__menu .navbar__link');
+
+if (toggle && nav && menu) {
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('is-open');          // <-- this is what CSS listens to
+    toggle.classList.toggle('active');        // (optional) animate the burger
+  });
+
+  // Close drawer when a link is clicked
+  links.forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('is-open');
+    toggle.classList.remove('active');
+  }));
+
+  // Safety: if user resizes up to desktop, ensure menu is closed
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 1280) {
+      nav.classList.remove('is-open');
+      toggle.classList.remove('active');
+    }
+  });
+}
     
     // Navbar scroll effect
     let lastScrollY = window.scrollY;
