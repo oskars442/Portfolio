@@ -136,57 +136,81 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 
-    // Form handling
-    const form = document.getElementById('contactForm');
-    const formStatus = document.getElementById('formStatus');
+// Helpers (keep or adapt if you already have them)
+function isValidEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+function showError(id, msg) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = msg;
+}
+function clearErrors() {
+  ["nameError", "emailError", "messageError"].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = "";
+  });
+}
+function showStatus(msg, type) {
+  const box = document.getElementById("formStatus");
+  if (!box) return;
+  box.textContent = msg;
+  box.className = `form-status ${type || ""}`;
+}
 
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        // Clear previous errors
-        clearErrors();
-        
-        // Validate form
-        const formData = new FormData(form);
-        const name = formData.get('name').trim();
-        const email = formData.get('email').trim();
-        const message = formData.get('message').trim();
-        
-        let hasErrors = false;
-        
-        if (!name) {
-            showError('nameError', 'Name is required');
-            hasErrors = true;
-        }
-        
-        if (!email) {
-            showError('emailError', 'Email is required');
-            hasErrors = true;
-        } else if (!isValidEmail(email)) {
-            showError('emailError', 'Please enter a valid email');
-            hasErrors = true;
-        }
-        
-        if (!message) {
-            showError('messageError', 'Message is required');
-            hasErrors = true;
-        }
-        
-        if (hasErrors) return;
-        
-        // Simulate form submission
-        const submitButton = form.querySelector('button[type="submit"]');
-        const originalText = submitButton.innerHTML;
-        submitButton.innerHTML = '<span>Sending...</span>';
-        submitButton.disabled = true;
-        
-        setTimeout(() => {
-            showStatus('Thank you! Your message has been sent successfully.', 'success');
-            form.reset();
-            submitButton.innerHTML = originalText;
-            submitButton.disabled = false;
-        }, 2000);
+const form = document.getElementById("contactForm");
+const formStatus = document.getElementById("formStatus");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  clearErrors();
+
+  const formData = new FormData(form);
+  const name = (formData.get("name") || "").toString().trim();
+  const email = (formData.get("email") || "").toString().trim();
+  const message = (formData.get("message") || "").toString().trim();
+
+  let hasErrors = false;
+  if (!name) { showError("nameError", "Name is required"); hasErrors = true; }
+  if (!email) { showError("emailError", "Email is required"); hasErrors = true; }
+  else if (!isValidEmail(email)) { showError("emailError", "Please enter a valid email"); hasErrors = true; }
+  if (!message) { showError("messageError", "Message is required"); hasErrors = true; }
+
+  if (hasErrors) return;
+
+  const submitButton = form.querySelector('button[type="submit"]');
+  const originalHTML = submitButton.innerHTML;
+  submitButton.innerHTML = "<span>Sending...</span>";
+  submitButton.disabled = true;
+
+  try {
+    // IMPORTANT: this posts to the action URL in your form tag
+    const res = await fetch(form.action, {
+      method: "POST",
+      headers: { "Accept": "application/json" },
+      body: formData
     });
+
+    if (res.ok) {
+      showStatus("Thank you! Your message has been sent successfully.", "success");
+      form.reset();
+    } else {
+      // Try to read validation details from Formspree
+      let err = "Something went wrong. Please try again.";
+      try {
+        const data = await res.json();
+        if (data && data.errors && data.errors.length) {
+          err = data.errors.map(e => e.message).join(" ");
+        }
+      } catch(_) {}
+      showStatus(err, "error");
+    }
+  } catch (e2) {
+    showStatus("Network error. Please check your connection and try again.", "error");
+  } finally {
+    submitButton.innerHTML = originalHTML;
+    submitButton.disabled = false;
+  }
+});
 
     // Real-time validation
     const inputs = form.querySelectorAll('.form-input');
