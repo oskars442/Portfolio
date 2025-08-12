@@ -1,367 +1,725 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional Web Developer specializing in modern, responsive web solutions and smart IT integrations.">
-    <meta name="keywords" content="web developer, web design, API integrations, responsive design, JavaScript, PHP">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Oskars Developer - Professional Web Developer">
-    <meta property="og:description" content="Creating modern, responsive web solutions with clean UX and smart integrations.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="./assets/og-image.jpg">
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Oskars Developer",
-        "jobTitle": "Web Developer",
-        "description": "Professional web developer specializing in modern web solutions"
-    }
-    </script>
-    
-    <title>Oskars Developer - Professional Web Developer</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Meta that we’ll overwrite via JS per language -->
+  <title data-i18n-head-title>Oskars Developer - Professional Web Developer</title>
+  <meta
+    name="description"
+    content="Professional Web Developer specializing in modern, responsive web solutions and smart IT integrations."
+    data-i18n-head-description
+  />
+  <meta
+    name="keywords"
+    content="web developer, web design, API integrations, responsive design, JavaScript, PHP"
+    data-i18n-keywords
+  />
+
+  <!-- Open Graph (title/description updated by JS too) -->
+  <meta property="og:title" content="Oskars Developer - Professional Web Developer" data-i18n-og-title />
+  <meta property="og:description" content="Creating modern, responsive web solutions with clean UX and smart integrations." data-i18n-og-description />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="./assets/og-image.jpg" />
+
+  <!-- Structured Data (kept EN; optional to localize later) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Oskars Developer",
+    "jobTitle": "Web Developer",
+    "description": "Professional web developer specializing in modern web solutions"
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
-     <!-- Navigation Bar -->
-    <nav class="navbar" id="navbar">
-        <div class="navbar__container">
-            <div class="navbar__brand">
-                <a href="#hero" class="navbar__logo">
-                    <span class="navbar__logo-bracket">&lt;</span>
-                    <span class="navbar__logo-text">OskarsDev</span>
-                    <span class="navbar__logo-bracket">/&gt;</span>
-                </a>
-            </div>
-            
-            <ul class="navbar__menu" id="navbarMenu">
-                <li class="navbar__item">
-                    <a href="#hero" class="navbar__link" data-section="hero">Home</a>
-                </li>
-                <li class="navbar__item">
-                    <a href="#services" class="navbar__link" data-section="services">Services</a>
-                </li>
-                <li class="navbar__item">
-                    <a href="#about" class="navbar__link" data-section="about">About</a>
-                </li>
-                <li class="navbar__item">
-                    <a href="#skills" class="navbar__link" data-section="skills">Skills</a>
-                </li>
-                <li class="navbar__item">
-                    <a href="#projects" class="navbar__link" data-section="projects">Projects</a>
-                </li>
-                <li class="navbar__item">
-                    <a href="#contact" class="navbar__link" data-section="contact">Contact</a>
-                </li>
-            </ul>
-            
-            <div class="navbar__toggle" id="navbarToggle">
-                <span class="navbar__toggle-bar"></span>
-                <span class="navbar__toggle-bar"></span>
-                <span class="navbar__toggle-bar"></span>
-            </div>
-        </div>
-    </nav>
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="hero__background"></div>
-        <div class="hero__particles"></div>
-        <div class="container hero__container">
-            <div class="hero__content">
-                <h1 class="hero__title">
-                    <span class="hero__title-main">Building Digital</span>
-                    <span class="hero__title-accent">Experiences</span>
-                </h1>
-                <p class="hero__subtitle">Full-stack web developer crafting modern, responsive solutions with clean code and exceptional user experiences.</p>
-                <div class="hero__buttons">
-                    <button class="btn btn--primary" onclick="scrollToSection('projects')">
-                        <span>View Projects</span>
-                    </button>
-                    <button class="btn btn--secondary" onclick="scrollToSection('contact')">
-                        <span>Get In Touch</span>
-                    </button>
-                </div>
-            </div>
-            <div class="hero__image">
-                <div class="hero__photo">
-                    <img src="./images/i2.jpg" alt="Oskars Developer - Web Developer" loading="lazy">
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__container">
+      <div class="navbar__brand">
+        <a href="#hero" class="navbar__logo" aria-label="OskarsDev" data-i18n-aria="brand.label">
+          <span class="navbar__logo-bracket">&lt;</span>
+          <span class="navbar__logo-text">OskarsDev</span>
+          <span class="navbar__logo-bracket">/&gt;</span>
+        </a>
+      </div>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section__title">
-                <span class="section__title-text">Services</span>
-                <span class="section__title-underline"></span>
-            </h2>
-            <div class="services__grid">
-                <div class="service-card">
-                    <div class="service-card__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                            <path d="M2 17l10 5 10-5"/>
-                            <path d="M2 12l10 5 10-5"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-card__title">Web Design</h3>
-                    <p class="service-card__description">Creating beautiful, user-centered designs that convert visitors into customers.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-card__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                            <line x1="8" y1="21" x2="16" y2="21"/>
-                            <line x1="12" y1="17" x2="12" y2="21"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-card__title">Smart IT Solutions</h3>
-                    <p class="service-card__description">Intelligent automation and system integrations that streamline your workflow.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-card__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                            <polyline points="22,6 12,13 2,6"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-card__title">Email Setup & Config</h3>
-                    <p class="service-card__description">Professional email systems setup with security and deliverability optimization.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-card__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="16,18 22,12 16,6"/>
-                            <polyline points="8,6 2,12 8,18"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-card__title">API Integrations</h3>
-                    <p class="service-card__description">Seamless third-party service connections and custom API development.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-card__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                            <line x1="8" y1="21" x2="16" y2="21"/>
-                            <line x1="12" y1="17" x2="12" y2="21"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-card__title">Responsive Design</h3>
-                    <p class="service-card__description">Mobile-first development ensuring perfect experiences across all devices.</p>
-                </div>
+      <ul class="navbar__menu" id="navbarMenu">
+        <li class="navbar__item"><a href="#hero" class="navbar__link" data-i18n="nav.home">Home</a></li>
+        <li class="navbar__item"><a href="#services" class="navbar__link" data-i18n="nav.services">Services</a></li>
+        <li class="navbar__item"><a href="#about" class="navbar__link" data-i18n="nav.about">About</a></li>
+        <li class="navbar__item"><a href="#skills" class="navbar__link" data-i18n="nav.skills">Skills</a></li>
+        <li class="navbar__item"><a href="#projects" class="navbar__link" data-i18n="nav.projects">Projects</a></li>
+        <li class="navbar__item"><a href="#contact" class="navbar__link" data-i18n="nav.contact">Contact</a></li>
+      </ul>
 
-                <div class="service-card">
-  <div class="service-card__icon" aria-hidden="true">
-    <!-- credit-card / checkout icon -->
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <rect x="2" y="5" width="20" height="14" rx="2" />
-      <line x1="2" y1="9" x2="22" y2="9" />
-      <rect x="6" y="13" width="6" height="3" rx="1" />
-    </svg>
-  </div>
-  <h3 class="service-card__title">Payment System Integration</h3>
-  <p class="service-card__description">
-    Secure, seamless checkout with Stripe, PayPal and bank cards — webhooks, subscriptions,
-    invoices, refunds, SCA/3-D Secure, and test/sandbox setup.
-  </p>
-</div>
-            </div>
+      <!-- Language Switch -->
+      <div class="lang-switch" id="langSwitch" aria-label="Language switch">
+        <button class="lang-btn" data-lang="en" aria-pressed="true">EN</button>
+        <button class="lang-btn" data-lang="lv" aria-pressed="false">LV</button>
+      </div>
+
+      <div class="navbar__toggle" id="navbarToggle">
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="hero__background"></div>
+    <div class="hero__particles"></div>
+    <div class="container hero__container">
+      <div class="hero__content">
+        <h1 class="hero__title">
+          <span class="hero__title-main" data-i18n="hero.titleMain">Building Digital</span>
+          <span class="hero__title-accent" data-i18n="hero.titleAccent">Experiences</span>
+        </h1>
+        <p class="hero__subtitle" data-i18n="hero.subtitle">
+          Full-stack web developer crafting modern, responsive solutions with clean code and exceptional user experiences.
+        </p>
+        <div class="hero__buttons">
+          <button class="btn btn--primary" onclick="scrollToSection('projects')">
+            <span data-i18n="hero.ctaProjects">View Projects</span>
+          </button>
+          <button class="btn btn--secondary" onclick="scrollToSection('contact')">
+            <span data-i18n="hero.ctaContact">Get In Touch</span>
+          </button>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section__title">
-                <span class="section__title-text">About Me</span>
-                <span class="section__title-underline"></span>
-            </h2>
-            <div class="about__content">
-                <div class="about__text">
-                    <p>I'm a passionate web developer with over 5 years of experience creating digital solutions that make a difference. My journey began with a curiosity about how websites work, and it has evolved into a deep expertise in modern web technologies and user experience design.</p>
-                    
-                    <p>I specialize in building fast, accessible, and beautiful web applications using cutting-edge technologies. Whether it's a simple landing page or a complex web application, I focus on clean code, performance optimization, and exceptional user experiences.</p>
-                    
-                    <p>When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community.</p>
-                </div>
-                <div class="about__image">
-                    <img src="./images/workspace.png" loading="lazy">
-                </div>
-            </div>
+      </div>
+      <div class="hero__image">
+        <div class="hero__photo">
+          <img src="./images/i2.jpg" alt="Oskars Developer - Web Developer" loading="lazy" data-i18n-alt="hero.photoAlt" />
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section__title">
-                <span class="section__title-text">Skills & Technologies</span>
-                <span class="section__title-underline"></span>
-            </h2>
-            <div class="skills__content">
-                <div class="skills__category">
-                    <h3 class="skills__category-title">Frontend</h3>
-                    <div class="skills__badges">
-                        <span class="skill-badge">HTML5</span>
-                        <span class="skill-badge">CSS3</span>
-                        <span class="skill-badge">JavaScript</span>
-                        <span class="skill-badge">React</span>
-                        <span class="skill-badge">Responsive Design</span>
-                        <span class="skill-badge">Bootsrap</span>
-                        <span class="skill-badge">Tailwind CSS</span>
-                    </div>
-                </div>
-                
-                <div class="skills__category">
-                    <h3 class="skills__category-title">Backend & Database</h3>
-                    <div class="skills__badges">
-                        <span class="skill-badge">PHP</span>
-                        <span class="skill-badge">Python</span>
-                        <span class="skill-badge">MySQL</span>
-                        <span class="skill-badge">API Integrations</span>
-                        <span class="skill-badge">GraphQL</span>
-                        <span class="skill-badge">Node.js</span>
-                    </div>
-                </div>
-                
-                <div class="skills__category">
-                    <h3 class="skills__category-title">Tools & Platforms</h3>
-                    <div class="skills__badges">
-                        <span class="skill-badge">Git & GitHub</span>
-                        <span class="skill-badge">Wix</span>
-                        <span class="skill-badge">Wordpress</span>
-                        <span class="skill-badge">Shopify</span>
-                        <span class="skill-badge">Figma</span>
-                        <span class="skill-badge">Email Configuration</span>
-                        <span class="skill-badge">Smart IT Solutions</span>
-                        <span class="skill-badge">Accounting Logic</span>
-                        <span class="skill-badge">SEO Optimization Tools</span>
-                        <span class="skill-badge">cPanel / Hosting managment</span>
-                    </div>
-                </div>
-            </div>
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2 class="section__title">
+        <span class="section__title-text" data-i18n="services.title">Services</span>
+        <span class="section__title-underline"></span>
+      </h2>
+
+      <div class="services__grid">
+        <div class="service-card">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+              <path d="M2 17l10 5 10-5"></path>
+              <path d="M2 12l10 5 10-5"></path>
+            </svg>
+          </div>
+          <h3 class="service-card__title" data-i18n="services.webDesign.title">Web Design</h3>
+          <p class="service-card__description" data-i18n="services.webDesign.desc">Creating beautiful, user-centered designs that convert visitors into customers.</p>
         </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section__title">
-                <span class="section__title-text">Featured Projects</span>
-                <span class="section__title-underline"></span>
-            </h2>
-            <div class="projects__grid">
-                <div class="project-card">
-                    <div class="project-card__image">
-                        <img src="./images/project1.png" alt="E-commerce Platform Project" loading="lazy">
-                        <div class="project-card__overlay">
-                            <button class="btn btn--project">View Project</button>
-                        </div>
-                    </div>
-                    <div class="project-card__content">
-                        <h3 class="project-card__title">Time tracikg platform Calendarit</h3>
-                        <p class="project-card__description">Full stack time tracking solutions with account dashboard</p>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-card__image">
-                        <img src="./images/project2.png" alt="Corporate Website Project" loading="lazy">
-                        <div class="project-card__overlay">
-                            <button class="btn btn--project">View Project</button>
-                        </div>
-                    </div>
-                    <div class="project-card__content">
-                        <h3 class="project-card__title">Tour-Agency web page</h3>
-                        <p class="project-card__description">Modern tour-agency website with API integration and performance optimization.</p>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-card__image">
-                        <img src="./images/project3.png" alt="Web Application Project" loading="lazy">
-                        <div class="project-card__overlay">
-                            <button class="btn btn--project">View Project</button>
-                        </div>
-                    </div>
-                    <div class="project-card__content">
-                        <h3 class="project-card__title">Task Management App</h3>
-                        <p class="project-card__description">Collaborative task management application with real-time updates and team features.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="service-card">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <h3 class="service-card__title" data-i18n="services.smartIT.title">Smart IT Solutions</h3>
+          <p class="service-card__description" data-i18n="services.smartIT.desc">Intelligent automation and system integrations that streamline your workflow.</p>
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section__title">
-                <span class="section__title-text">Get In Touch</span>
-                <span class="section__title-underline"></span>
-            </h2>
-            <div class="contact__content">
-                <form class="contact__form" id="contactForm">
-                    <div class="form-group">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" id="name" name="name" class="form-input" required>
-                        <span class="form-error" id="nameError"></span>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" id="email" name="email" class="form-input" required>
-                        <span class="form-error" id="emailError"></span>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea id="message" name="message" class="form-input form-textarea" rows="5" required></textarea>
-                        <span class="form-error" id="messageError"></span>
-                    </div>
-                    
-                    <button type="submit" class="btn btn--primary btn--full">
-                        <span>Send Message</span>
-                    </button>
-                    
-                    <div class="form-status" id="formStatus"></div>
-                </form>
-                
-                <div class="contact__social">
-                    <a href="https://github.com/oskars442" class="social-link" aria-label="GitHub">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.facebook.com/oskars.seklitis" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                 <path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.326 24H12.82v-9.294H9.692V11.06h3.128V8.413c0-3.1 1.894-4.788 4.66-4.788 1.325 0 2.463.099 2.795.143v3.24h-1.918c-1.504 0-1.796.715-1.796 1.764v2.31h3.59l-.468 3.646h-3.122V24h6.116C23.407 24 24 23.408 24 22.674V1.326C24 .592 23.407 0 22.675 0z"/>
-                     </svg>
-                    </a>
-                    
-                <a href="https://x.com/oskars442" class="social-link" aria-label="X (formerly Twitter)" target="_blank" rel="noopener noreferrer">
-  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-    <path d="M18.244 2H21.67l-7.43 8.492L23.5 22h-6.49l-5.09-6.447L6.2 22H2.77l7.93-9.07L.5 2h6.64l4.62 5.963L18.244 2zm-1.14 17.67h1.44L7.06 4.17H5.51l11.594 15.5z"/>
-  </svg>
-</a>
-                </div>
-            </div>
+        <div class="service-card">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </div>
+          <h3 class="service-card__title" data-i18n="services.email.title">Email Setup & Config</h3>
+          <p class="service-card__description" data-i18n="services.email.desc">Professional email systems setup with security and deliverability optimization.</p>
         </div>
-    </section>
 
-    <script src="script.js"></script>
+        <div class="service-card">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="16,18 22,12 16,6"></polyline>
+              <polyline points="8,6 2,12 8,18"></polyline>
+            </svg>
+          </div>
+          <h3 class="service-card__title" data-i18n="services.api.title">API Integrations</h3>
+          <p class="service-card__description" data-i18n="services.api.desc">Seamless third-party service connections and custom API development.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <h3 class="service-card__title" data-i18n="services.responsive.title">Responsive Design</h3>
+          <p class="service-card__description" data-i18n="services.responsive.desc">Mobile-first development ensuring perfect experiences across all devices.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+              <line x1="2" y1="9" x2="22" y2="9"></line>
+              <rect x="6" y="13" width="6" height="3" rx="1"></rect>
+            </svg>
+          </div>
+          <h3 class="service-card__title" data-i18n="services.payments.title">Payment System Integration</h3>
+          <p class="service-card__description" data-i18n="services.payments.desc">
+            Secure, seamless checkout with Stripe, PayPal and bank cards — webhooks, subscriptions,
+            invoices, refunds, SCA/3-D Secure, and test/sandbox setup.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2 class="section__title">
+        <span class="section__title-text" data-i18n="about.title">About Me</span>
+        <span class="section__title-underline"></span>
+      </h2>
+      <div class="about__content">
+        <div class="about__text">
+          <p data-i18n="about.p1">I'm a passionate web developer with over 5 years of experience creating digital solutions that make a difference. My journey began with a curiosity about how websites work, and it has evolved into a deep expertise in modern web technologies and user experience design.</p>
+          <p data-i18n="about.p2">I specialize in building fast, accessible, and beautiful web applications using cutting-edge technologies. Whether it's a simple landing page or a complex web application, I focus on clean code, performance optimization, and exceptional user experiences.</p>
+          <p data-i18n="about.p3">When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community.</p>
+        </div>
+        <div class="about__image">
+          <img src="./images/workspace.png" loading="lazy" alt="Developer workspace illustration" data-i18n-alt="about.photoAlt" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <div class="container">
+      <h2 class="section__title">
+        <span class="section__title-text" data-i18n="skills.title">Skills & Technologies</span>
+        <span class="section__title-underline"></span>
+      </h2>
+      <div class="skills__content">
+        <div class="skills__category">
+          <h3 class="skills__category-title" data-i18n="skills.frontend">Frontend</h3>
+          <div class="skills__badges">
+            <span class="skill-badge" data-i18n="skills.badge.html">HTML5</span>
+            <span class="skill-badge" data-i18n="skills.badge.css">CSS3</span>
+            <span class="skill-badge" data-i18n="skills.badge.js">JavaScript</span>
+            <span class="skill-badge" data-i18n="skills.badge.react">React</span>
+            <span class="skill-badge" data-i18n="skills.badge.responsive">Responsive Design</span>
+            <span class="skill-badge" data-i18n="skills.badge.bootstrap">Bootstrap</span>
+            <span class="skill-badge" data-i18n="skills.badge.tailwind">Tailwind CSS</span>
+          </div>
+        </div>
+
+        <div class="skills__category">
+          <h3 class="skills__category-title" data-i18n="skills.backend">Backend & Database</h3>
+          <div class="skills__badges">
+            <span class="skill-badge" data-i18n="skills.badge.php">PHP</span>
+            <span class="skill-badge" data-i18n="skills.badge.python">Python</span>
+            <span class="skill-badge" data-i18n="skills.badge.mysql">MySQL</span>
+            <span class="skill-badge" data-i18n="skills.badge.api">API Integrations</span>
+            <span class="skill-badge" data-i18n="skills.badge.graphql">GraphQL</span>
+            <span class="skill-badge" data-i18n="skills.badge.node">Node.js</span>
+          </div>
+        </div>
+
+        <div class="skills__category">
+          <h3 class="skills__category-title" data-i18n="skills.tools">Tools & Platforms</h3>
+          <div class="skills__badges">
+            <span class="skill-badge" data-i18n="skills.badge.git">Git & GitHub</span>
+            <span class="skill-badge" data-i18n="skills.badge.wix">Wix</span>
+            <span class="skill-badge" data-i18n="skills.badge.wordpress">WordPress</span>
+            <span class="skill-badge" data-i18n="skills.badge.shopify">Shopify</span>
+            <span class="skill-badge" data-i18n="skills.badge.figma">Figma</span>
+            <span class="skill-badge" data-i18n="skills.badge.emailCfg">Email Configuration</span>
+            <span class="skill-badge" data-i18n="skills.badge.smartIT">Smart IT Solutions</span>
+            <span class="skill-badge" data-i18n="skills.badge.accounting">Accounting Logic</span>
+            <span class="skill-badge" data-i18n="skills.badge.seoTools">SEO Optimization Tools</span>
+            <span class="skill-badge" data-i18n="skills.badge.cpanel">cPanel / Hosting management</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <h2 class="section__title">
+        <span class="section__title-text" data-i18n="projects.title">Featured Projects</span>
+        <span class="section__title-underline"></span>
+      </h2>
+
+      <div class="projects__grid">
+        <div class="project-card">
+          <div class="project-card__image">
+            <img src="./images/project1.png" alt="Time tracking platform project" loading="lazy" data-i18n-alt="projects.p1.alt" />
+            <div class="project-card__overlay">
+              <a href="https://calendarit.net" target="_blank" class="btn btn--project" data-i18n="projects.view">View Project</a>
+            </div>
+          </div>
+          <div class="project-card__content">
+            <h3 class="project-card__title" data-i18n="projects.p1.title">Time tracking platform Calendarit</h3>
+            <p class="project-card__description" data-i18n="projects.p1.desc">Full stack time tracking solutions with account dashboard</p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card__image">
+            <img src="./images/project2.png" alt="Corporate website project" loading="lazy" data-i18n-alt="projects.p2.alt" />
+            <div class="project-card__overlay">
+              <button class="btn btn--project" data-i18n="projects.view">View Project</button>
+            </div>
+          </div>
+          <div class="project-card__content">
+            <h3 class="project-card__title" data-i18n="projects.p2.title">Tour-Agency web page</h3>
+            <p class="project-card__description" data-i18n="projects.p2.desc">Modern tour-agency website with API integration and performance optimization.</p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card__image">
+            <img src="./images/project3.png" alt="Web application project" loading="lazy" data-i18n-alt="projects.p3.alt" />
+            <div class="project-card__overlay">
+              <button class="btn btn--project" data-i18n="projects.view">View Project</button>
+            </div>
+          </div>
+          <div class="project-card__content">
+            <h3 class="project-card__title" data-i18n="projects.p3.title">Task Management App</h3>
+            <p class="project-card__description" data-i18n="projects.p3.desc">Collaborative task management application with real-time updates and team features.</p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card__image">
+            <img src="./images/skrundas-turisms.png" alt="City presentation page" loading="lazy" data-i18n-alt="projects.p4.alt" />
+            <div class="project-card__overlay">
+              <button class="btn btn--project" data-i18n="projects.view">View Project</button>
+            </div>
+          </div>
+          <div class="project-card__content">
+            <h3 class="project-card__title" data-i18n="projects.p4.title">City presentation page</h3>
+            <p class="project-card__description" data-i18n="projects.p4.desc">Presentation page with changeable language and interactive map.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section__title">
+        <span class="section__title-text" data-i18n="contact.title">Get In Touch</span>
+        <span class="section__title-underline"></span>
+      </h2>
+    </div>
+
+    <div class="container">
+      <div class="contact__content">
+        <form class="contact__form" id="contactForm">
+          <div class="form-group">
+            <label for="name" class="form-label" data-i18n="contact.nameLabel">Name</label>
+            <input type="text" id="name" name="name" class="form-input" required data-i18n-placeholder="contact.namePlaceholder" />
+            <span class="form-error" id="nameError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label" data-i18n="contact.emailLabel">Email</label>
+            <input type="email" id="email" name="email" class="form-input" required data-i18n-placeholder="contact.emailPlaceholder" />
+            <span class="form-error" id="emailError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="message" class="form-label" data-i18n="contact.messageLabel">Message</label>
+            <textarea id="message" name="message" class="form-input form-textarea" rows="5" required data-i18n-placeholder="contact.messagePlaceholder"></textarea>
+            <span class="form-error" id="messageError"></span>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--full">
+            <span data-i18n="contact.send">Send Message</span>
+          </button>
+
+          <div class="form-status" id="formStatus"></div>
+        </form>
+
+        <div class="contact__social">
+          <a href="https://github.com/oskars442" class="social-link" aria-label="GitHub" data-i18n-aria="social.github">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+          </a>
+
+          <a href="https://www.facebook.com/oskars.seklitis" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer" data-i18n-aria="social.facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.326 24H12.82v-9.294H9.692V11.06h3.128V8.413c0-3.1 1.894-4.788 4.66-4.788 1.325 0 2.463.099 2.795.143v3.24h-1.918c-1.504 0-1.796.715-1.796 1.764v2.31h3.59l-.468 3.646h-3.122V24h6.116C23.407 24 24 23.408 24 22.674V1.326C24 .592 23.407 0 22.675 0z"></path></svg>
+          </a>
+
+          <a href="https://x.com/oskars442" class="social-link" aria-label="X (formerly Twitter)" target="_blank" rel="noopener noreferrer" data-i18n-aria="social.x">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2H21.67l-7.43 8.492L23.5 22h-6.49l-5.09-6.447L6.2 22H2.77l7.93-9.07L.5 2h6.64l4.62 5.963L18.244 2zm-1.14 17.67h1.44L7.06 4.17H5.51l11.594 15.5z"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <script src="script.js"></script>
+
+  <!-- i18n script (safe to keep inline) -->
+  <script>
+/* ========= Tiny i18n for your portfolio ========= */
+
+const I18N = {
+  en: {
+    // Head + OG
+    "__head.title": "Oskars Developer - Professional Web Developer",
+    "__head.description": "Professional Web Developer specializing in modern, responsive web solutions and smart IT integrations.",
+    "__head.keywords": "web developer, web design, API integrations, responsive design, JavaScript, PHP",
+    "__og.title": "Oskars Developer - Professional Web Developer",
+    "__og.description": "Creating modern, responsive web solutions with clean UX and smart integrations.",
+
+    // Nav
+    "nav.home": "Home",
+    "nav.services": "Services",
+    "nav.about": "About",
+    "nav.skills": "Skills",
+    "nav.projects": "Projects",
+    "nav.contact": "Contact",
+
+    // Brand & Social (aria)
+    "brand.label": "OskarsDev",
+    "social.github": "GitHub",
+    "social.facebook": "Facebook",
+    "social.x": "X (formerly Twitter)",
+
+    // Hero
+    "hero.titleMain": "Building Digital",
+    "hero.titleAccent": "Experiences",
+    "hero.subtitle": "Full-stack web developer crafting modern, responsive solutions with clean code and exceptional user experiences.",
+    "hero.ctaProjects": "View Projects",
+    "hero.ctaContact": "Get In Touch",
+    "hero.photoAlt": "Oskars Developer - Web Developer",
+
+    // Services
+    "services.title": "Services",
+    "services.webDesign.title": "Web Design",
+    "services.webDesign.desc": "Creating beautiful, user-centered designs that convert visitors into customers.",
+    "services.smartIT.title": "Smart IT Solutions",
+    "services.smartIT.desc": "Intelligent automation and system integrations that streamline your workflow.",
+    "services.email.title": "Email Setup & Config",
+    "services.email.desc": "Professional email systems setup with security and deliverability optimization.",
+    "services.api.title": "API Integrations",
+    "services.api.desc": "Seamless third-party service connections and custom API development.",
+    "services.responsive.title": "Responsive Design",
+    "services.responsive.desc": "Mobile-first development ensuring perfect experiences across all devices.",
+    "services.payments.title": "Payment System Integration",
+    "services.payments.desc": "Secure, seamless checkout with Stripe, PayPal and bank cards — webhooks, subscriptions, invoices, refunds, SCA/3-D Secure, and test/sandbox setup.",
+
+    // About
+    "about.title": "About Me",
+    "about.p1": "I'm a passionate web developer with over 5 years of experience creating digital solutions that make a difference. My journey began with a curiosity about how websites work, and it has evolved into a deep expertise in modern web technologies and user experience design.",
+    "about.p2": "I specialize in building fast, accessible, and beautiful web applications using cutting-edge technologies. Whether it's a simple landing page or a complex web application, I focus on clean code, performance optimization, and exceptional user experiences.",
+    "about.p3": "When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community.",
+    "about.photoAlt": "Developer workspace illustration",
+
+    // Skills
+    "skills.title": "Skills & Technologies",
+    "skills.frontend": "Frontend",
+    "skills.backend": "Backend & Database",
+    "skills.tools": "Tools & Platforms",
+
+    // Skills badges
+    "skills.badge.html": "HTML5",
+    "skills.badge.css": "CSS3",
+    "skills.badge.js": "JavaScript",
+    "skills.badge.react": "React",
+    "skills.badge.responsive": "Responsive Design",
+    "skills.badge.bootstrap": "Bootstrap",
+    "skills.badge.tailwind": "Tailwind CSS",
+    "skills.badge.php": "PHP",
+    "skills.badge.python": "Python",
+    "skills.badge.mysql": "MySQL",
+    "skills.badge.api": "API Integrations",
+    "skills.badge.graphql": "GraphQL",
+    "skills.badge.node": "Node.js",
+    "skills.badge.git": "Git & GitHub",
+    "skills.badge.wix": "Wix",
+    "skills.badge.wordpress": "WordPress",
+    "skills.badge.shopify": "Shopify",
+    "skills.badge.figma": "Figma",
+    "skills.badge.emailCfg": "Email Configuration",
+    "skills.badge.smartIT": "Smart IT Solutions",
+    "skills.badge.accounting": "Accounting Logic",
+    "skills.badge.seoTools": "SEO Optimization Tools",
+    "skills.badge.cpanel": "cPanel / Hosting management",
+
+    // Projects
+    "projects.title": "Featured Projects",
+    "projects.view": "View Project",
+    "projects.p1.title": "Time tracking platform Calendarit",
+    "projects.p1.desc": "Full stack time tracking solutions with account dashboard",
+    "projects.p1.alt": "Time tracking platform project",
+
+    "projects.p2.title": "Tour-Agency web page",
+    "projects.p2.desc": "Modern tour-agency website with API integration and performance optimization.",
+    "projects.p2.alt": "Corporate website project",
+
+    "projects.p3.title": "Task Management App",
+    "projects.p3.desc": "Collaborative task management application with real-time updates and team features.",
+    "projects.p3.alt": "Web application project",
+
+    "projects.p4.title": "City presentation page",
+    "projects.p4.desc": "Presentation page with changeable language and interactive map.",
+    "projects.p4.alt": "City presentation page",
+
+    // Contact
+    "contact.title": "Get In Touch",
+    "contact.nameLabel": "Name",
+    "contact.emailLabel": "Email",
+    "contact.messageLabel": "Message",
+    "contact.namePlaceholder": "Your name",
+    "contact.emailPlaceholder": "your@email.com",
+    "contact.messagePlaceholder": "Tell me a bit about your project…",
+    "contact.send": "Send Message",
+  },
+
+  lv: {
+    // Head + OG
+    "__head.title": "Oskars Developer – Profesionāls tīmekļa izstrādātājs",
+    "__head.description": "Profesionāls tīmekļa izstrādātājs moderniem, responsīviem risinājumiem un gudrām IT integrācijām.",
+    "__head.keywords": "tīmekļa izstrādātājs, web dizains, API integrācijas, responsīvs dizains, JavaScript, PHP",
+    "__og.title": "Oskars Developer – Profesionāls tīmekļa izstrādātājs",
+    "__og.description": "Veidoju mūsdienīgus, responsīvus risinājumus ar tīru UX un viedām integrācijām.",
+
+    // Nav
+    "nav.home": "Sākums",
+    "nav.services": "Pakalpojumi",
+    "nav.about": "Par mani",
+    "nav.skills": "Prasmes",
+    "nav.projects": "Projekti",
+    "nav.contact": "Kontakti",
+
+    // Brand & Social (aria)
+    "brand.label": "OskarsDev",
+    "social.github": "GitHub",
+    "social.facebook": "Facebook",
+    "social.x": "X (iepriekš Twitter)",
+
+    // Hero
+    "hero.titleMain": "Veidoju digitālas",
+    "hero.titleAccent": "pieredzes",
+    "hero.subtitle": "Pilna cikla tīmekļa izstrādātājs – mūsdienīgi, responsīvi risinājumi ar tīru kodu un izcilu lietošanas pieredzi.",
+    "hero.ctaProjects": "Apskatīt projektus",
+    "hero.ctaContact": "Sazināties",
+    "hero.photoAlt": "Oskars Developer – tīmekļa izstrādātājs",
+
+    // Services
+    "services.title": "Pakalpojumi",
+    "services.webDesign.title": "Web dizains",
+    "services.webDesign.desc": "Skaisti, uz lietotāju vērsti dizaini, kas pārvērš apmeklētājus klientos.",
+    "services.smartIT.title": "Gudrie IT risinājumi",
+    "services.smartIT.desc": "Inteliģenta automatizācija un sistēmu integrācijas darba plūsmas uzlabošanai.",
+    "services.email.title": "E-pasta uzstādīšana un konfigurācija",
+    "services.email.desc": "Profesionāla e-pasta sistēmu ieviešana ar drošību un piegādes optimizāciju.",
+    "services.api.title": "API integrācijas",
+    "services.api.desc": "Plūstoša pieslēgšanās trešo pušu servisiem un pielāgota API izstrāde.",
+    "services.responsive.title": "Responsīvs dizains",
+    "services.responsive.desc": "Mobile-first pieeja un nevainojama pieredze uz visām ierīcēm.",
+    "services.payments.title": "Maksājumu integrācija",
+    "services.payments.desc": "Droši, ērti norēķini ar Stripe, PayPal un kartēm — webhook, abonementi, rēķini, atmaksas, SCA/3-D Secure un test/sandbox vide.",
+
+    // About
+    "about.title": "Par mani",
+    "about.p1": "Esmu aizrautīgs izstrādātājs ar 5+ gadu pieredzi risinājumos, kas dod pievienoto vērtību. Sākums bija ziņkāre, kā darbojas mājaslapas — tagad tā ir padziļināta kompetence modernās tehnoloģijās un UX.",
+    "about.p2": "Specializējos ātrās, pieejamās un vizuāli skaistās lietotnēs. No vienkāršām lapām līdz sarežģītām sistēmām — uzsvars uz tīru kodu, veiktspēju un izcilu lietošanas pieredzi.",
+    "about.p3": "Brīvajā laikā izpētu jaunas tehnoloģijas, piedalos open-source un dalos zināšanās ar kopienu.",
+    "about.photoAlt": "Izstrādātāja darba vietas ilustrācija",
+
+    // Skills
+    "skills.title": "Prasmes un tehnoloģijas",
+    "skills.frontend": "Frontend",
+    "skills.backend": "Backend un datubāzes",
+    "skills.tools": "Rīki un platformas",
+
+    // Skills badges (proper nouns mostly unchanged)
+    "skills.badge.html": "HTML5",
+    "skills.badge.css": "CSS3",
+    "skills.badge.js": "JavaScript",
+    "skills.badge.react": "React",
+    "skills.badge.responsive": "Responsīvs dizains",
+    "skills.badge.bootstrap": "Bootstrap",
+    "skills.badge.tailwind": "Tailwind CSS",
+    "skills.badge.php": "PHP",
+    "skills.badge.python": "Python",
+    "skills.badge.mysql": "MySQL",
+    "skills.badge.api": "API integrācijas",
+    "skills.badge.graphql": "GraphQL",
+    "skills.badge.node": "Node.js",
+    "skills.badge.git": "Git & GitHub",
+    "skills.badge.wix": "Wix",
+    "skills.badge.wordpress": "WordPress",
+    "skills.badge.shopify": "Shopify",
+    "skills.badge.figma": "Figma",
+    "skills.badge.emailCfg": "E-pasta konfigurācija",
+    "skills.badge.smartIT": "Gudrie IT risinājumi",
+    "skills.badge.accounting": "Grāmatvedības loģika",
+    "skills.badge.seoTools": "SEO rīki",
+    "skills.badge.cpanel": "cPanel / hostinga pārvaldība",
+
+    // Projects
+    "projects.title": "Izceltie projekti",
+    "projects.view": "Apskatīt projektu",
+    "projects.p1.title": "Laika uzskaites platforma Calendarit",
+    "projects.p1.desc": "Pilna cikla laika uzskaite ar lietotāja paneli",
+    "projects.p1.alt": "Laika uzskaites platformas projekts",
+
+    "projects.p2.title": "Tūrisma aģentūras lapa",
+    "projects.p2.desc": "Mūsdienīga lapa ar API integrāciju un veiktspējas optimizāciju.",
+    "projects.p2.alt": "Korporatīvās lapas projekts",
+
+    "projects.p3.title": "Uzdevumu pārvaldības lietotne",
+    "projects.p3.desc": "Komandas darbs, reāllaika atjauninājumi un sadarbības iespējas.",
+    "projects.p3.alt": "Tīmekļa lietotnes projekts",
+
+    "projects.p4.title": "Pilsētas prezentācijas lapa",
+    "projects.p4.desc": "Lapa ar valodas maiņu un interaktīvu karti.",
+    "projects.p4.alt": "Pilsētas prezentācijas lapa",
+
+    // Contact
+    "contact.title": "Sazināties",
+    "contact.nameLabel": "Vārds",
+    "contact.emailLabel": "E-pasts",
+    "contact.messageLabel": "Ziņa",
+    "contact.namePlaceholder": "Jūsu vārds",
+    "contact.emailPlaceholder": "jusu@epasts.lv",
+    "contact.messagePlaceholder": "Pastāstiet īsi par ideju…",
+    "contact.send": "Nosūtīt ziņu",
+  }
+};
+
+/* ---------- Helpers ---------- */
+const DEFAULT_LANG = "en";
+function pickInitialLang() {
+  const saved = localStorage.getItem("lang");
+  if (saved) return saved;
+  const nav = (navigator.language || navigator.userLanguage || "").toLowerCase();
+  if (nav.startsWith("lv")) return "lv";
+  return DEFAULT_LANG;
+}
+function t(dict, key) { return (dict && dict[key]) || ""; }
+
+/* ---------- Core translator ---------- */
+function applyLang(lang) {
+  const dict = I18N[lang] || I18N[DEFAULT_LANG];
+
+  // <html lang="..">
+  document.documentElement.setAttribute("lang", lang);
+
+  // Text nodes
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    const val = t(dict, key);
+    if (val) el.textContent = val;
+  });
+
+  // Attributes
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+    const key = el.getAttribute("data-i18n-placeholder");
+    const val = t(dict, key);
+    if (val) el.setAttribute("placeholder", val);
+  });
+  document.querySelectorAll("[data-i18n-alt]").forEach(el => {
+    const key = el.getAttribute("data-i18n-alt");
+    const val = t(dict, key);
+    if (val) el.setAttribute("alt", val);
+  });
+  document.querySelectorAll("[data-i18n-aria]").forEach(el => {
+    const key = el.getAttribute("data-i18n-aria");
+    const val = t(dict, key);
+    if (val) el.setAttribute("aria-label", val);
+  });
+  document.querySelectorAll("[data-i18n-title]").forEach(el => {
+    const key = el.getAttribute("data-i18n-title");
+    const val = t(dict, key);
+    if (val) el.setAttribute("title", val);
+  });
+
+  // Head/meta
+  const title = t(dict, "__head.title");
+  if (title) document.title = title;
+
+  const desc = t(dict, "__head.description");
+  if (desc) {
+    const md = document.querySelector('meta[name="description"]');
+    if (md) md.setAttribute("content", desc);
+  }
+
+  const keywords = t(dict, "__head.keywords");
+  if (keywords) {
+    const mk = document.querySelector('meta[name="keywords"]');
+    if (mk) mk.setAttribute("content", keywords);
+  }
+
+  const ogTitle = t(dict, "__og.title");
+  if (ogTitle) {
+    const ogt = document.querySelector('meta[property="og:title"]');
+    if (ogt) ogt.setAttribute("content", ogTitle);
+  }
+
+  const ogDesc = t(dict, "__og.description");
+  if (ogDesc) {
+    const ogd = document.querySelector('meta[property="og:description"]');
+    if (ogd) ogd.setAttribute("content", ogDesc);
+  }
+
+  // Toggle button pressed state
+  document.querySelectorAll(".lang-btn").forEach(btn => {
+    btn.setAttribute("aria-pressed", btn.dataset.lang === lang ? "true" : "false");
+  });
+
+  localStorage.setItem("lang", lang);
+}
+
+/* ---------- Smooth scroll for buttons (already used) ---------- */
+window.scrollToSection = function(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: "smooth" });
+};
+
+/* ---------- Init ---------- */
+document.addEventListener("DOMContentLoaded", () => {
+  const lang = pickInitialLang();
+  applyLang(lang);
+
+  const switcher = document.getElementById("langSwitch");
+  if (switcher) {
+    switcher.addEventListener("click", (e) => {
+      const btn = e.target.closest(".lang-btn");
+      if (!btn) return;
+      const next = btn.dataset.lang;
+      if (!next) return;
+      applyLang(next);
+    });
+  }
+});
+
+  </script>
 </body>
 </html>
